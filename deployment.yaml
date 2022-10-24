@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dep_assignment
+  labels:
+    tier: frontend_c270
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      tier: frontend_c270
+  template:
+    metadata:
+      name: c270_assignment
+      labels:
+        tier: frontend_c270
+    spec:
+      containers:
+      - name: c270-assignment
+        image: dasponuku02/c270-assignment
+        ports:
+        - containerPort: 8000
+

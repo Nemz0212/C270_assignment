@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ser_assignment
+spec:
+  type: NodePort
+  selector:
+    tier: frontend_c270
+  ports:
+    - port: 8000
+      targetPort: 8000
+      nodePort: 2000
